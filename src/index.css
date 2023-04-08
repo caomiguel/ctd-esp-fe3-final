@@ -19,7 +19,7 @@ code {
   cursor: pointer;
 }
 
-h1{
+h1, h2, h3{
   text-align: center;
 }
 
@@ -75,8 +75,18 @@ form{
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
+  width: 250px;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0.5px solid rgb(136, 136, 136);
+}
+
+.card-detail{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
 }
 
@@ -87,7 +97,7 @@ form{
 .card-grid{
   display: flex;
   justify-content: space-evenly;
-  gap: 1rem;
+  gap: 0.4rem;
   width: 90vw;
   height: auto;
   flex-wrap: wrap;
@@ -119,4 +129,98 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+.doctor-img {
+  width: 100%;
+  height: auto;
+}
+
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  height: fit-content;
+  background-color: #F6F6F6;
+  padding: 50px;
+  margin: 50px;
+  border-radius: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #2E2E2E;
+  margin-bottom: 5px;
+}
+
+input {
+  border: none;
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.submit-button {
+  background-color: #45A29E;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #2E8B57;
+}
+
+.error-message {
+  color: #F94144;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.error-message::before {
+  content: "\274C";
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.success-message {
+  color: #2BCB95;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.success-message::before {
+  content: "\2705";
+  font-size: 24px;
+  margin-right: 5px;
 }
