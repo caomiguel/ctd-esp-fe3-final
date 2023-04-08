@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useDentiStates } from "./utils/Context";
 
 const Card = ({ name, username, id }) => {
 

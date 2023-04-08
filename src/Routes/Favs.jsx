@@ -1,11 +1,13 @@
 import React from "react";
 import Card from "../Components/Card";
 import { Link } from "react-router-dom"
+import { useDentiStates } from '../Components/utils/Context'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Favs = () => {
 
+  const {favState} = useDentiStates()
     let favs = localStorage.getItem('favs')
     let parsedFavs = JSON.parse(favs)
 
@@ -16,8 +18,8 @@ const Favs = () => {
         {/* este componente debe consumir los destacados del localStorage */}
         {/* Deberan renderizar una Card por cada uno de ellos */}
 
-        {parsedFavs ? (
-         parsedFavs.map(dentist => (
+        {favState ? (
+         favState.map(dentist => (
           <Link key={dentist.id} to={'/dentist/' + dentist.id}>
               <Card key={dentist.id} name={dentist.name} username={dentist.username} id={dentist.id}></Card>
           </Link>)

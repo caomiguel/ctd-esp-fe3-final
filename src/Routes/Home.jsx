@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
 
-const {dentiList} = useDentiStates()
+  const {apiState, themeState} = useDentiStates()
 
   return (
-    <main className="" >
+    <main className={themeState} >
       <h1>Home</h1>
       <div className='card-grid'>
-        {dentiList.map(dentist =>
+        {apiState.dentiList.map(dentist =>
           <Link key={dentist.id} to={'/dentist/' + dentist.id}>
             <Card key={dentist.id} name={dentist.name} username={dentist.username} id={dentist.id}></Card>
           </Link>)

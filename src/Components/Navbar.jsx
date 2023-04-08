@@ -1,9 +1,21 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { useDentiStates } from "./utils/Context";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
+
+  const {themeState, themeDispatch} = useDentiStates()
+
+  const switchTheme = () => {
+    if(themeState.theme){
+      themeDispatch({type: 'SWITCH_DARK'})
+    } else {
+      themeDispatch({type:'SWITCH_LIGHT'})
+    }
+    
+  }
 
   return (
     <nav>
@@ -15,7 +27,7 @@ const Navbar = () => {
       </>
     
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button>Change theme</button>
+      <button onClick={switchTheme}>{themeState.theme ? '🌘' : '☀️'}</button>
     </nav>
   )
 }
